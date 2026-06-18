@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power Automate: Optimizing Operations</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+.slide { display: none; }
+.slide.active { display: flex; }
+
+.gradient-bg {
+  background: linear-gradient(135deg, #09090b 0%, #18181b 100%);
+}
+</style>
+</head>
+
+<body class="gradient-bg text-zinc-100 font-sans min-h-screen flex flex-col">
+
+<!-- Progress Bar -->
+<div class="w-full bg-zinc-900 h-1.5">
+  <div id="progress" class="bg-red-600 h-1.5 transition-all duration-300"></div>
+</div>
+
+<!-- ✅ NAVIGATION TABS -->
+<div class="w-full bg-zinc-950 border-b border-zinc-900">
+  <div class="max-w-6xl mx-auto px-4 py-2 flex flex-wrap gap-2 justify-center">
+
+    <button class="tab-btn px-3 py-1.5 text-xs rounded-lg" onclick="goToSlide(0)">Home</button>
+    <button class="tab-btn px-3 py-1.5 text-xs rounded-lg" onclick="goToSlide(1)">Overview</button>
+    <button class="tab-btn px-3 py-1.5 text-xs rounded-lg" onclick="goToSlide(2)">AI vs Automation</button>
+    <button class="tab-btn px-3 py-1.5 text-xs rounded-lg" onclick="goToSlide(3)">KPIs and Metrics</button>
+    <button class="tab-btn px-3 py-1.5 text-xs rounded-lg" onclick="goToSlide(4)">Summary and Next Steps</button>
+
+  </div>
+</div>
+
+<main class="flex-grow flex items-center justify-center p-6 md:p-12 max-w-6xl mx-auto w-full">
+
+<!-- SLIDE 1 -->
+<section class="slide active flex-col items-center text-center space-y-6">
+<div class="flex items-center gap-6 mb-4 bg-zinc-900/80 px-6 py-3 rounded-xl border border-zinc-800 backdrop-blur">
+<div class="flex items-center gap-2">
+<svg class="w-5 h-5" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0H11V11H0V0Z" fill="#F25022"/>
+<path d="M12 0H23V11H12V0Z" fill="#7FBA00"/>
+<path d="M0 12H11V23H0V12Z" fill="#00A4EF"/>
+<path d="M12 12H23V23H12V12Z" fill="#FFB900"/>
+</svg>
+<span class="text-xs font-bold tracking-wider text-zinc-400 uppercase">Microsoft</span>
+</div>
+<div class="h-4 w-px bg-zinc-700"></div>
+<div class="flex items-center gap-2">
+<svg class="w-5 h-5" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.2 2.3c-.7-.4-1.6-.4-2.3.1L5.3 8.3c-.7.4-1.2 1.2-1.2 2v11.4c0 .8.4 1.6 1.2 2l9.6 5.9c.7.4 1.6.4 2.3-.1l9.6-5.9c.7-.4 1.2-1.2 1.2-2V10.3c0-.8-.4-1.6-1.2-2l-9.7-6z" fill="#EF4444" opacity="0.1"/>
+<path d="M15.4 3.7c.4-.2.9-.2 1.2 0l7.9 4.8c.4.2.6.7.6 1.1v9.6c0 .5-.2.9-.6 1.1l-7.9 4.8c-.4.2-.9.2-1.2 0l-7.9-4.8c-.4-.2-.6-.7-.6-1.1V9.6c0-.5.2-.9.6-1.1l7.9-4.8z" fill="#991B1B"/>
+<path d="M10.5 10.1c.3-.5.9-.7 1.4-.4l7.6 4.4c.5.3.7.9.4 1.4l-3.5 6.1c-.3.5-.9.7-1.4.4l-7.6-4.4c-.5-.3-.7-.9-.4-1.4l3.5-6.1z" fill="#DC2626"/>
+<path d="M21.5 21.9c-.3.5-.9.7-1.4.4l-7.6-4.4c-.5-.3-.7-.9-.4-1.4l3.5-6.1c.3-.5.9-.7 1.4-.4l7.6 4.4c.5.3.7.9.4 1.4l-3.5 6.1z" fill="#EF4444"/>
+</svg>
+<span class="text-xs font-bold tracking-wider text-zinc-400 uppercase">Power Automate</span>
+</div>
+</div>
+<div class="bg-red-950/40 text-red-400 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wider uppercase border border-red-500/30">
+               Process Optimization
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-rose-400 to-orange-500">
+               Power Automate: Revolutionizing Our Daily Operations
+</h1>
+<p class="text-xl text-zinc-300 max-w-2xl">
+               How we leveraged <strong>Power Automate</strong> to streamline weekly processes and maximize organizational productivity.
+</p>
+<div class="pt-8 text-sm text-zinc-500 flex items-center gap-2">
+<span>Press</span>
+<kbd class="px-2 py-1 bg-zinc-900 rounded border border-zinc-800 text-xs text-zinc-400">→</kbd>
+<span>or click Next to begin</span>
+</div>
+</section>
+
+<!-- SLIDE 2 -->
+<section class="slide flex-col space-y-6 w-full">
+<div class="flex items-center gap-3">
+<svg class="w-10 h-10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.4 3.7c.4-.2.9-.2 1.2 0l7.9 4.8c.4.2.6.7.6 1.1v9.6c0 .5-.2.9-.6 1.1l-7.9 4.8c-.4.2-.9.2-1.2 0l-7.9-4.8c-.4-.2-.6-.7-.6-1.1V9.6c0-.5.2-.9.6-1.1l7.9-4.8z" fill="#991B1B"/>
+<path d="M10.5 10.1c.3-.5.9-.7 1.4-.4l7.6 4.4c.5.3.7.9.4 1.4l-3.5 6.1c-.3.5-.9.7-1.4.4l-7.6-4.4c-.5-.3-.7-.9-.4-1.4l3.5-6.1z" fill="#DC2626"/>
+<path d="M21.5 21.9c-.3.5-.9.7-1.4.4l-7.6-4.4c-.5-.3-.7-.9-.4-1.4l3.5-6.1c.3-.5.9-.7 1.4-.4l7.6 4.4c.5.3.7.9.4 1.4l-3.5 6.1z" fill="#EF4444"/>
+</svg>
+<h2 class="text-3xl md:text-5xl font-bold text-red-500">
+                   What is Power Automate?
+</h2>
+</div>
+<p class="text-lg text-zinc-300 max-w-3xl leading-relaxed">
+               Power Automate is a workflow automation platform that enables us to streamline processes, reduce manual effort, and improve operational efficiency by seamlessly integrating with our existing Microsoft ecosystem. 
+</p>
+<div class="grid md:grid-cols-3 gap-6 pt-6">
+<div class="bg-zinc-900/60 p-6 rounded-xl border border-zinc-800">
+<div class="text-red-500 text-2xl mb-3"><i class="fa-solid fa-bolt"></i></div>
+<h3 class="font-bold text-lg mb-2 text-zinc-100">Connectors</h3>
+<p class="text-zinc-400 text-sm">Sharepoint, OneDrive, Outlook, Teams, Adobe and many more.</p>
+</div>
+<div class="bg-zinc-900/60 p-6 rounded-xl border border-zinc-800">
+<div class="text-rose-400 text-2xl mb-3"><i class="fa-solid fa-gears"></i></div>
+<h3 class="font-bold text-lg mb-2 text-zinc-100">Triggers</h3>
+<p class="text-zinc-400 text-sm">Events that trigger the workflow (e.g., "When an email arrives" or "Daily at 8:00 AM").</p>
+</div>
+<div class="bg-zinc-900/60 p-6 rounded-xl border border-zinc-800">
+<div class="text-orange-500 text-2xl mb-3"><i class="fa-solid fa-code-branch"></i></div>
+<h3 class="font-bold text-lg mb-2 text-zinc-100">Actions</h3>
+<p class="text-zinc-400 text-sm">The Execution steps (e.g., "Request Approval", "Save a copy of the email attachment here", "Extract infomation from the email and fill out the excel sheet", "Send an email/teams notification").</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SLIDE 3 -->
+<section class="slide flex-col space-y-6 w-full">
+<h2 class="text-3xl md:text-5xl font-bold text-red-500 flex items-center gap-3">
+<i class="fa-solid fa-code-compare"></i> AI vs. Automation
+</h2>
+<p class="text-zinc-300 max-w-3xl text-lg">
+               While often used interchangeably, Artificial Intelligence and Process Automation serve distinct operational purposes.
+</p>
+<div class="grid md:grid-cols-2 gap-6 pt-4">
+<!-- Automation Column -->
+<div class="bg-zinc-900/60 p-6 rounded-xl border border-zinc-800">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 bg-red-500/10 text-red-400 rounded-lg flex items-center justify-center text-xl"><i class="fa-solid fa-gears"></i></div>
+<h3 class="font-bold text-xl text-zinc-100">Process Automation</h3>
+</div>
+<ul class="space-y-4 text-sm text-zinc-300">
+<li class="flex items-start gap-3">
+<i class="fa-solid fa-check text-red-500 mt-1"></i>
+<div><strong>Rule-Based Execution:</strong> Operates on strict, predefined rules "If X, then Y".</div>
+</li>
+<li class="flex items-start gap-3">
+<i class="fa-solid fa-check text-red-500 mt-1"></i>
+<div><strong>High Predictability:</strong> Follows exact instructions consistently without deviation or interpretation.</div>
+</li>
+<li class="flex items-start gap-3">
+<i class="fa-solid fa-check text-red-500 mt-1"></i>
+<div><strong>Best Applied For:</strong> Repetitive data entry, routing approvals, and notifications and reminders.</div>
+</li>
+</ul>
+</div>
+<!-- AI Column -->
+<div class="bg-zinc-900/60 p-6 rounded-xl border border-zinc-800">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 bg-rose-500/10 text-rose-400 rounded-lg flex items-center justify-center text-xl"><i class="fa-solid fa-brain"></i></div>
+<h3 class="font-bold text-xl text-zinc-100">Artificial Intelligence</h3>
+</div>
+<ul class="space-y-4 text-sm text-zinc-300">
+<li class="flex items-start gap-3">
+<i class="fa-solid fa-check text-rose-400 mt-1"></i>
+<div><strong>Data-Driven Learning:</strong> Analyzes patterns, unstructured data, and context to generate outcomes.</div>
+</li>
+<li class="flex items-start gap-3">
+<i class="fa-solid fa-check text-rose-400 mt-1"></i>
+<div><strong>Adaptive Logic:</strong> AI enhances processes by learning from data, generating insights, and supporting decision-making</div>
+</li>
+<li class="flex items-start gap-3">
+<i class="fa-solid fa-check text-rose-400 mt-1"></i>
+<div><strong>Best Applied For:</strong> Sentiment analysis, document processing, and AI Agents.</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-red-950/20 border border-red-900/50 p-4 rounded-xl text-red-200 text-sm flex items-center gap-3 mt-2">
+<i class="fa-solid fa-lightbulb text-red-400 text-xl"></i>
+<p><strong>AI Features in Power Automate:</strong> Power Automate acts can move and extract data, while allowing integration with tools like AI Builder and Copilot Agents.</p>
+</div>
+</section>
+
+<!-- SLIDE 4 -->
+<!-- ✅ USE CASES + KPI + ROI -->
+<section class="slide flex-col space-y-8 w-full relative">
+
+<div class="absolute top-0 right-3 w-64 md:w-80 bg-zinc-900/80 border border-zinc-700 rounded-xl p-5 z-10">
+<video class="w-full rounded-lg" autoplay muted loop playsinline preload="metadata">
+<source src="power-automate-demo.mp4" type="video/mp4">
+Your browser does not support HTML5 video.
+</video>
+</div>
+
+<h2 class="text-3xl font-bold text-red-500">Use Cases, KPIs & ROI</h2>
+
+<!-- USE CASES -->
+<div class="space-y-4">
+<div class="p-4 bg-zinc-900 rounded-xl border border-zinc-800">
+<h4 class="font-bold">Incoming Customer Communications</h4>
+<p class="text-sm text-zinc-400">around 5 mins → 2 mins</p>
+</div>
+
+<div class="p-4 bg-zinc-900 rounded-xl border border-zinc-800">
+<h4 class="font-bold">Syncing Project Review Meetings from Outlook to SharePoint</h4>
+<p class="text-sm text-zinc-400">around 30 mins - 1 hour → 5 mins</p>
+</div>
+</div>
+
+<div class="p-4 bg-zinc-900 rounded-xl border border-zinc-800">
+<h4 class="font-bold">PMO Weekly Notifications</h4>
+<p class="text-sm text-zinc-400">around 30 mins → 1-2 mins</p>
+</div>
+
+<div class="p-4 bg-zinc-900 rounded-xl border border-zinc-800">
+<h4 class="font-bold">Automated Monthly Reminders OTD & Claims</h4>
+<p class="text-sm text-zinc-400">Based on the template email we will send automated email reminders</p>
+</div>
+</div>
+
+<div class="p-4 bg-zinc-900 rounded-xl border border-zinc-800">
+<h4 class="font-bold">File Transfer from one Sharepoint to another</h4>
+<p class="text-sm text-zinc-400">In order to prevent manual copying of files, the system will automatically transfer files from one SharePoint to another.</p>
+</div>
+</div>
+
+<div class="p-4 bg-zinc-900 rounded-xl border border-zinc-800">
+<h4 class="font-bold">IN PROGRESS - ATP Approval Process</h4>
+<p class="text-sm text-zinc-400">Once the ATP approval process is submitted, the system will automatically send approval notifications to the relevant managers.</p>
+</div>
+</div>
+
+<div class="p-4 bg-zinc-900 rounded-xl border border-zinc-800">
+<h4 class="font-bold">IN PROGRESS - Email Reminders based on Excel Modifications</h4>
+<p class="text-sm text-zinc-400">If PMs forget to provide update on excel report, the system will automatically send email reminders to the relevant project managers.</p>
+</div>
+</div>
+
+<div class="p-4 bg-zinc-900 rounded-xl border border-zinc-800">
+<h4 class="font-bold">IN PROGRESS - Email Reminders to specific individuals based on the PowerBI report</h4>
+<p class="text-sm text-zinc-400">If actions are required based on the PowerBI report, the system will automatically send email reminders to the relevant individuals.</p>
+</div>
+</div>
+
+<!-- KPIs -->
+<div>
+<h3 class="text-xl font-semibold mt-6 mb-4">KPIs</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+<div class="bg-zinc-900 p-4 text-center rounded-xl">
+<div class="text-3xl text-red-500 font-bold">5+</div>
+<p class="text-xs text-zinc-400">Automations</p>
+</div>
+
+<div class="bg-zinc-900 p-4 text-center rounded-xl">
+<div class="text-3xl font-bold">3</div>
+<p class="text-xs text-zinc-400">In Progress</p>
+</div>
+
+<div class="bg-zinc-900 p-4 text-center rounded-xl">
+<div class="text-3xl text-rose-400 font-bold">98%</div>
+<p class="text-xs text-zinc-400">Accuracy</p>
+</div>
+
+<div class="bg-zinc-900 p-4 text-center rounded-xl">
+<div class="text-3xl text-orange-400 font-bold">25+ mins</div>
+<p class="text-xs text-zinc-400">Saved in Manual Work</p>
+</div>
+
+</div>
+</div>
+
+<!-- ROI -->
+<div class="mt-6">
+<h3 class="text-xl font-semibold mb-4">ROI Comparison</h3>
+
+<div class="grid md:grid-cols-2 gap-6">
+
+<div class="bg-zinc-900 p-5 rounded-xl">
+<h4 class="font-bold mb-2">Before</h4>
+<ul class="text-sm text-zinc-400 space-y-2">
+<li>40–60 mins weekly work</li>
+<li>Manual follow-ups</li>
+<li>Higher errors</li>
+</ul>
+</div>
+
+<div class="bg-red-950/20 border border-red-900 p-5 rounded-xl">
+<h4 class="font-bold mb-2 text-white">After</h4>
+<ul class="text-sm text-zinc-300 space-y-2">
+<li class="text-green-400">~8–10 mins</li>
+<li class="text-green-400">Fewer follow-ups</li>
+<li class="text-green-400">90% accuracy</li>
+</ul>
+</div>
+
+</div>
+
+<div class="mt-4 bg-zinc-900 p-4 rounded-xl text-sm text-zinc-300">
+<strong>ROI Impact:</strong> 70–90% reduction in manual effort + significant time savings weekly.
+</div>
+
+</div>
+
+</section>
+
+<!-- SUMMARY -->
+
+<section class="slide flex-col items-center text-center space-y-8 w-full">
+<h2 class="text-3xl md:text-5xl font-bold text-red-500 flex items-center gap-3 justify-center">
+<i class="fa-solid fa-check-double"></i> Summary & Next Steps
+</h2>
+<div class="flex flex-col md:flex-row items-center justify-center gap-8 w-full pt-4">
+<div class="bg-zinc-900/40 border border-zinc-800 rounded-2xl p-8 w-full md:w-1/2">
+<div class="text-zinc-600 text-3xl mb-2"><i class="fa-solid fa-folder-open"></i></div>
+<span class="text-xs uppercase font-bold tracking-wider text-zinc-500">Legacy State</span>
+<h3 class="text-2xl font-bold mt-1 text-zinc-300">Manual Processing</h3>
+<p class="text-zinc-400 mt-2 text-sm">
+                       Continuous manual auditing, drafting repetitive updates, tracking stakeholders down, and executing individual emails <span class="text-zinc-300 font-semibold">every single week</span>.
+</p>
+</div>
+<div class="text-zinc-700 text-3xl hidden md:block">
+<i class="fa-solid fa-arrow-right-long animate-pulse"></i>
+</div>
+<div class="bg-red-950/20 border border-red-900/40 rounded-2xl p-8 w-full md:w-1/2 shadow-xl shadow-red-950/10">
+<div class="text-red-500 text-3xl mb-2"><i class="fa-solid fa-microchip"></i></div>
+<span class="text-xs uppercase font-bold tracking-wider text-red-400">Current State</span>
+<h3 class="text-2xl font-bold mt-1 text-white">Automated Execution</h3>
+<p class="text-zinc-300 mt-2 text-sm font-medium">
+                       Workflows run seamlessly in the background requiring minimal oversight, allowing the team to focus strictly on high-leverage strategic work.
+</p>
+</div>
+</div>
+<div class="text-xl font-semibold text-zinc-200 pt-4">
+               Which operational process should we optimize next? 💡
+</div>
+</section>
+
+</main>
+
+<footer class="w-full bg-zinc-950 border-t border-zinc-900 px-6 py-4 flex justify-between">
+
+<span id="current-slide-num">1</span>
+
+<div>
+  <button id="prev-btn" class="px-4 py-2 bg-zinc-800 rounded">Prev</button>
+  <button id="next-btn" class="px-4 py-2 bg-red-600 rounded">Next</button>
+</div>
+
+</footer>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const tabs = document.querySelectorAll('.tab-btn');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const progressBar = document.getElementById('progress');
+const currentSlideNum = document.getElementById('current-slide-num');
+
+let currentSlideIndex = 0;
+
+// ✅ GO TO SLIDE
+function goToSlide(index) {
+  currentSlideIndex = index;
+  updateSlideVisibility();
+}
+
+// ✅ UPDATE TABS STYLE
+function updateTabs() {
+  tabs.forEach((tab, index) => {
+    if (index === currentSlideIndex) {
+      tab.classList.add('bg-red-600/20','text-red-400','border','border-red-500/30');
+      tab.classList.remove('bg-zinc-900','text-zinc-300');
+    } else {
+      tab.classList.remove('bg-red-600/20','text-red-400','border','border-red-500/30');
+      tab.classList.add('bg-zinc-900','text-zinc-300');
+    }
+  });
+}
+
+// ✅ UPDATE SLIDES
+function updateSlideVisibility() {
+  slides.forEach((slide, index) => {
+    slide.classList.remove('active');
+    if (index === currentSlideIndex) {
+      slide.classList.add('active');
+    }
+  });
+
+  currentSlideNum.textContent = currentSlideIndex + 1;
+
+  const progress = ((currentSlideIndex + 1) / slides.length) * 100;
+  progressBar.style.width = progress + '%';
+
+  updateTabs();
+}
+
+// ✅ NEXT / PREV
+function nextSlide() {
+  currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+  updateSlideVisibility();
+}
+
+function prevSlide() {
+  currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+  updateSlideVisibility();
+}
+
+nextBtn.addEventListener('click', nextSlide);
+prevBtn.addEventListener('click', prevSlide);
+
+// ✅ KEYBOARD SUPPORT
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') nextSlide();
+  if (e.key === 'ArrowLeft') prevSlide();
+});
+
+// INIT
+updateSlideVisibility();
+</script>
+
+</body>
+</html>
