@@ -31,9 +31,10 @@
 
     <button class="tab-btn px-3 py-1.5 text-xs rounded-lg" onclick="goToSlide(0)">Home</button>
     <button class="tab-btn px-3 py-1.5 text-xs rounded-lg" onclick="goToSlide(1)">Overview</button>
-    <button class="tab-btn px-3 py-1.5 text-xs rounded-lg" onclick="goToSlide(2)">AI vs Automation</button>
-    <button class="tab-btn px-3 py-1.5 text-xs rounded-lg" onclick="goToSlide(3)">KPIs and Metrics</button>
-    <button class="tab-btn px-3 py-1.5 text-xs rounded-lg" onclick="goToSlide(4)">Summary and Next Steps</button>
+    <button class="tab-btn px-3 py-1.5 text-xs rounded-lg" onclick="goToSlide(2)">Creating Flows & Triggers</button>
+    <button class="tab-btn px-3 py-1.5 text-xs rounded-lg" onclick="goToSlide(3)">AI vs Automation</button>
+    <button class="tab-btn px-3 py-1.5 text-xs rounded-lg" onclick="goToSlide(4)">KPIs and Metrics</button>
+    <button class="tab-btn px-3 py-1.5 text-xs rounded-lg" onclick="goToSlide(5)">Summary and Next Steps</button>
 
   </div>
 </div>
@@ -114,7 +115,275 @@
 </div>
 </section>
 
-<!-- SLIDE 3 -->
+<!-- SLIDE 3 - CREATING FLOWS & TRIGGERS -->
+<section class="slide flex-col space-y-8 w-full">
+<div class="flex items-center gap-3 mb-4">
+<svg class="w-10 h-10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.4 3.7c.4-.2.9-.2 1.2 0l7.9 4.8c.4.2.6.7.6 1.1v9.6c0 .5-.2.9-.6 1.1l-7.9 4.8c-.4.2-.9.2-1.2 0l-7.9-4.8c-.4-.2-.6-.7-.6-1.1V9.6c0-.5.2-.9.6-1.1l7.9-4.8z" fill="#991B1B"/>
+<path d="M10.5 10.1c.3-.5.9-.7 1.4-.4l7.6 4.4c.5.3.7.9.4 1.4l-3.5 6.1c-.3.5-.9.7-1.4.4l-7.6-4.4c-.5-.3-.7-.9-.4-1.4l3.5-6.1z" fill="#DC2626"/>
+<path d="M21.5 21.9c-.3.5-.9.7-1.4.4l-7.6-4.4c-.5-.3-.7-.9-.4-1.4l3.5-6.1c.3-.5.9-.7 1.4-.4l7.6 4.4c.5.3.7.9.4 1.4l-3.5 6.1z" fill="#EF4444"/>
+</svg>
+<h2 class="text-3xl md:text-5xl font-bold text-red-500">
+Creating Flows & Understanding Triggers
+</h2>
+</div>
+
+<!-- STEP 1: Plain English Process -->
+<div class="space-y-4">
+<h3 class="text-xl font-bold text-zinc-100 flex items-center gap-2">
+<span class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">1</span>
+Start With a Simple Process (Plain English)
+</h3>
+<div class="bg-zinc-900/60 p-6 rounded-xl border border-red-500/30 space-y-3">
+<p class="text-zinc-300 text-lg font-semibold">Let's imagine the Incoming Customer Email Correspondence workflow:</p>
+<div class="space-y-2 text-zinc-300">
+<div class="flex items-start gap-3">
+<i class="fa-solid fa-check text-green-400 mt-1"></i>
+<span><strong>When:</strong> An email arrives from a customer (specific email address)</span>
+</div>
+<div class="flex items-start gap-3">
+<i class="fa-solid fa-arrow-right text-orange-400 mt-1"></i>
+<span><strong>Then:</strong> Create a NEW folder with the subject line and date</span>
+</div>
+<div class="flex items-start gap-3">
+<i class="fa-solid fa-arrow-right text-orange-400 mt-1"></i>
+<span><strong>Then:</strong> Save a copy of the email and the attachement to that folder</span>
+</div>
+<div class="flex items-start gap-3">
+<i class="fa-solid fa-arrow-right text-orange-400 mt-1"></i>
+<span><strong>Then:</strong> Log in the excel sheet</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- STEP 2: Translate to Power Automate Blocks -->
+<div class="space-y-4">
+<h3 class="text-xl font-bold text-zinc-100 flex items-center gap-2">
+<span class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">2</span>
+Translate to Power Automate Blocks
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- Trigger -->
+<div class="bg-gradient-to-br from-purple-900/50 to-purple-800/50 p-5 rounded-xl border border-purple-500/30 text-center">
+<div class="text-3xl mb-2 text-purple-400"><i class="fa-solid fa-lightning-bolt"></i></div>
+<h4 class="font-bold text-purple-200 text-sm">TRIGGER</h4>
+<p class="text-xs text-zinc-300 mt-2">When a new email arrives (V3)</p>
+</div>
+
+<!-- Action 1 -->
+<div class="bg-gradient-to-br from-blue-900/50 to-blue-800/50 p-5 rounded-xl border border-blue-500/30 text-center">
+<div class="text-3xl mb-2 text-blue-400"><i class="fa-solid fa-cube"></i></div>
+<h4 class="font-bold text-blue-200 text-sm">ACTION</h4>
+<p class="text-xs text-zinc-300 mt-2">Clean the Subject Line and extract the email date</p>
+</div>
+
+<!-- Action 2 -->
+<div class="bg-gradient-to-br from-green-900/50 to-green-800/50 p-5 rounded-xl border border-green-500/30 text-center">
+<div class="text-3xl mb-2 text-green-400"><i class="fa-solid fa-file-excel"></i></div>
+<h4 class="font-bold text-green-200 text-sm">ACTION</h4>
+<p class="text-xs text-zinc-300 mt-2">Export Email (V2)</p>
+</div>
+
+<!-- Action 2 -->
+<div class="bg-gradient-to-br from-green-900/50 to-green-800/50 p-5 rounded-xl border border-green-500/30 text-center">
+<div class="text-3xl mb-2 text-green-400"><i class="fa-solid fa-file-excel"></i></div>
+<h4 class="font-bold text-green-200 text-sm">ACTION</h4>
+<p class="text-xs text-zinc-300 mt-2">Create new folder </p>
+</div>
+
+<!-- Action 2 -->
+<div class="bg-gradient-to-br from-green-900/50 to-green-800/50 p-5 rounded-xl border border-green-500/30 text-center">
+<div class="text-3xl mb-2 text-green-400"><i class="fa-solid fa-file-excel"></i></div>
+<h4 class="font-bold text-green-200 text-sm">ACTION</h4>
+<p class="text-xs text-zinc-300 mt-2"> Export Email (V2)</p>
+</div>
+
+<!-- Action 2 -->
+<div class="bg-gradient-to-br from-green-900/50 to-green-800/50 p-5 rounded-xl border border-green-500/30 text-center">
+<div class="text-3xl mb-2 text-green-400"><i class="fa-solid fa-file-excel"></i></div>
+<h4 class="font-bold text-green-200 text-sm">ACTION</h4>
+<p class="text-xs text-zinc-300 mt-2">Create file (Email PDF)</p>
+</div>
+
+<!-- Action 2 -->
+<div class="bg-gradient-to-br from-green-900/50 to-green-800/50 p-5 rounded-xl border border-green-500/30 text-center">
+<div class="text-3xl mb-2 text-green-400"><i class="fa-solid fa-file-excel"></i></div>
+<h4 class="font-bold text-green-200 text-sm">ACTION</h4>
+<p class="text-xs text-zinc-300 mt-2">For each (Attachment in Email) + Create file (Attachement)</p>
+</div>
+
+<!-- Action 3 -->
+<div class="bg-gradient-to-br from-rose-900/50 to-rose-800/50 p-5 rounded-xl border border-rose-500/30 text-center">
+<div class="text-3xl mb-2 text-rose-400"><i class="fa-solid fa-envelope"></i></div>
+<h4 class="font-bold text-rose-200 text-sm">ACTION</h4>
+<p class="text-xs text-zinc-300 mt-2">Add a row into a table</p>
+</div>
+</div>
+</div>
+
+<!-- IMAGE: Flow Diagram Visual -->
+<div class="bg-zinc-900/60 p-8 rounded-xl border border-red-500/30 mt-6">
+<h4 class="font-bold text-lg mb-4 text-zinc-100 flex items-center gap-2">
+<i class="fa-solid fa-image text-red-500"></i>
+Power Automate Flow Builder Interface
+</h4>
+<div class="bg-zinc-800/50 rounded-lg overflow-hidden border border-zinc-700 flex items-center justify-center min-h-64">
+<img src="example 1.png" alt="Power Automate Flow with Trigger and Actions" class="w-full h-full object-cover">
+</div>
+<p class="text-sm text-zinc-400 mt-3"><i class="fa-solid fa-info-circle text-blue-400 mr-2"></i>This is what your completed flow looks like in Power Automate. The trigger starts the process, and each action executes in sequence.</p>
+</div>
+
+<div class="bg-zinc-900/60 p-8 rounded-xl border border-red-500/30 mt-6">
+<h4 class="font-bold text-lg mb-4 text-zinc-100 flex items-center gap-2">
+<i class="fa-solid fa-image text-red-500"></i>
+Power Automate Flow Builder Interface
+</h4>
+<div class="bg-zinc-800/50 rounded-lg overflow-hidden border border-zinc-700 flex items-center justify-center min-h-64">
+<img src="example 2.png" alt="Power Automate Flow with Trigger and Actions" class="w-full h-full object-cover">
+</div>
+<p class="text-sm text-zinc-400 mt-3"><i class="fa-solid fa-info-circle text-blue-400 mr-2"></i>This is what your completed flow looks like in Power Automate. The trigger starts the process, and each action executes in sequence.</p>
+</div>
+
+<!-- STEP 3: Understanding Triggers In-Depth -->
+<div class="space-y-4">
+<h3 class="text-xl font-bold text-zinc-100 flex items-center gap-2">
+<span class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">3</span>
+Understanding Triggers In-Depth
+</h3>
+
+<div class="grid md:grid-cols-2 gap-6">
+<!-- Trigger Visualization -->
+<div class="bg-zinc-900/60 p-6 rounded-xl border border-purple-500/30">
+<h4 class="font-bold text-lg mb-4 flex items-center gap-2">
+<i class="fa-solid fa-lightning-bolt text-purple-400"></i>
+What is a Trigger?
+</h4>
+<div class="space-y-4">
+<p class="text-zinc-300 text-sm leading-relaxed">
+A <strong>Trigger</strong> is the starting point of your flow. It's the event that automatically kickstarts your entire automation process without any manual intervention.
+</p>
+
+<div class="bg-purple-950/40 border border-purple-500/20 p-4 rounded-lg">
+<p class="text-xs text-purple-200 font-semibold mb-2 uppercase">Trigger Flow:</p>
+<div class="space-y-2 text-xs text-zinc-300">
+<div class="flex items-center gap-2">
+<span class="text-purple-400 font-bold">1.</span>
+<span>Something happens (email arrives, file created, date/time occurs)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-purple-400 font-bold">2.</span>
+<span>Power Automate detects it immediately</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-purple-400 font-bold">3.</span>
+<span>The workflow activates automatically</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-purple-400 font-bold">4.</span>
+<span>Actions execute in sequence</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Common Triggers -->
+<div class="bg-zinc-900/60 p-6 rounded-xl border border-purple-500/30">
+<h4 class="font-bold text-lg mb-4 flex items-center gap-2">
+<i class="fa-solid fa-tasks text-purple-400"></i>
+Common Trigger Examples
+</h4>
+<div class="space-y-3">
+<div class="bg-zinc-800/50 p-3 rounded-lg border-l-2 border-purple-500">
+<p class="text-sm font-semibold text-zinc-200"><i class="fa-solid fa-envelope text-purple-400 mr-2"></i>When an email arrives</p>
+<p class="text-xs text-zinc-400">From Outlook or Gmail</p>
+</div>
+
+<div class="bg-zinc-800/50 p-3 rounded-lg border-l-2 border-purple-500">
+<p class="text-sm font-semibold text-zinc-200"><i class="fa-solid fa-calendar text-purple-400 mr-2"></i>On a scheduled time</p>
+<p class="text-xs text-zinc-400">Daily, weekly, or monthly at specific times</p>
+</div>
+
+<div class="bg-zinc-800/50 p-3 rounded-lg border-l-2 border-purple-500">
+<p class="text-sm font-semibold text-zinc-200"><i class="fa-solid fa-file text-purple-400 mr-2"></i>When a file is created</p>
+<p class="text-xs text-zinc-400">In SharePoint, OneDrive, or other storage</p>
+</div>
+
+<div class="bg-zinc-800/50 p-3 rounded-lg border-l-2 border-purple-500">
+<p class="text-sm font-semibold text-zinc-200"><i class="fa-solid fa-list text-purple-400 mr-2"></i>When an item is modified</p>
+<p class="text-xs text-zinc-400">In SharePoint lists or Excel tables</p>
+</div>
+
+<div class="bg-zinc-800/50 p-3 rounded-lg border-l-2 border-purple-500">
+<p class="text-sm font-semibold text-zinc-200"><i class="fa-solid fa-bell text-purple-400 mr-2"></i>When a response is submitted</p>
+<p class="text-xs text-zinc-400">From Forms or approval requests</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Trigger Visual Diagram -->
+<div class="bg-zinc-900/60 p-6 rounded-xl border border-purple-500/30">
+<h4 class="font-bold text-lg mb-4 flex items-center gap-2">
+<i class="fa-solid fa-diagram-project text-purple-400"></i>
+Visual Flow Representation
+</h4>
+<div class="space-y-4">
+<!-- Event happens -->
+<div class="flex items-center justify-between gap-3">
+<div class="flex-1">
+<div class="bg-purple-950/60 border border-purple-500/50 rounded-lg p-3 text-center">
+<p class="text-xs text-zinc-400">EVENT HAPPENS</p>
+<p class="text-sm font-semibold text-purple-300">Email Arrives</p>
+</div>
+</div>
+<div class="text-purple-400 text-lg"><i class="fa-solid fa-arrow-right"></i></div>
+<div class="flex-1">
+<div class="bg-purple-950/60 border border-purple-500/50 rounded-lg p-3 text-center">
+<p class="text-xs text-zinc-400">TRIGGER FIRES</p>
+<p class="text-sm font-semibold text-purple-300">Recognized</p>
+</div>
+</div>
+<div class="text-purple-400 text-lg"><i class="fa-solid fa-arrow-right"></i></div>
+<div class="flex-1">
+<div class="bg-purple-950/60 border border-purple-500/50 rounded-lg p-3 text-center">
+<p class="text-xs text-zinc-400">FLOW STARTS</p>
+<p class="text-sm font-semibold text-purple-300">Automatic</p>
+</div>
+</div>
+</div>
+
+<!-- Key Benefits -->
+<div class="mt-4 bg-purple-950/40 border border-purple-500/20 p-4 rounded-lg">
+<p class="text-xs text-purple-200 font-semibold mb-3 uppercase flex items-center gap-2">
+<i class="fa-solid fa-star text-purple-400"></i>
+Why Triggers Matter
+</p>
+<ul class="space-y-2 text-xs text-zinc-300">
+<li class="flex items-start gap-2">
+<i class="fa-solid fa-check text-green-400 mt-0.5"></i>
+<span><strong>No Manual Steps:</strong> Workflows activate instantly without user intervention</span>
+</li>
+<li class="flex items-start gap-2">
+<i class="fa-solid fa-check text-green-400 mt-0.5"></i>
+<span><strong>Real-Time Processing:</strong> Events are captured and processed immediately</span>
+</li>
+<li class="flex items-start gap-2">
+<i class="fa-solid fa-check text-green-400 mt-0.5"></i>
+<span><strong>Consistency:</strong> Same actions execute every time with no variation</span>
+</li>
+<li class="flex items-start gap-2">
+<i class="fa-solid fa-check text-green-400 mt-0.5"></i>
+<span><strong>Time Savings:</strong> Eliminates repetitive manual work immediately</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SLIDE 4 -->
 <section class="slide flex-col space-y-6 w-full">
 <h2 class="text-3xl md:text-5xl font-bold text-red-500 flex items-center gap-3">
 <i class="fa-solid fa-code-compare"></i> AI vs. Automation
@@ -172,7 +441,7 @@
 </div>
 </section>
 
-<!-- SLIDE 4 -->
+<!-- SLIDE 5 -->
 <!-- ✅ USE CASES + KPI + ROI -->
 <section class="slide flex-col space-y-8 w-full relative">
 
@@ -295,7 +564,7 @@ Your browser does not support HTML5 video.
 
 </section>
 
-<!-- SUMMARY -->
+<!-- SLIDE 6 SUMMARY -->
 
 <section class="slide flex-col items-center text-center space-y-8 w-full">
 <h2 class="text-3xl md:text-5xl font-bold text-red-500 flex items-center gap-3 justify-center">
